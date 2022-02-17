@@ -6,13 +6,12 @@ function Footer(){
             <Container>
                 <Row>
                     <Col>
-                    © 2022 SNONCE. All Rights Reserved.
+                    © 2022 LERYK. All Rights Reserved.
                     </Col>
                     <Col>
                     <div style={{display:"flex", justifyContent:"space-around"}}>
-                    <a>About Us</a>
+                    <a style={{color:"white", textDecoration:"none"}} href="/aboutus">About Us</a>
                     <a>Get into contact</a>
-                    <a>FAQ</a>
                     </div>
                     </Col>
                 </Row>

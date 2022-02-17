@@ -1,10 +1,14 @@
 import React from "react"
 import Header from "../misc/navbar"
 import Footer from "../misc/footer"
-import { Container,Row,Col } from "react-bootstrap"
+import { Container,Row,Col,Collapse } from "react-bootstrap"
 import {AiOutlineCheck, AiOutlineArrowRight} from "react-icons/ai"
+import LearnMore from "./learnmore"
 
 import TicketImage from "../../Images/eth.png"
+import Cursor from "../../Images/cursor.png"
+import NFT from "../../Images/nft.png"
+import Metaverse from "../../Images/vr-glasses.png"
 
 import Particles from "react-tsparticles"
 import Particulas from "./particulas"
@@ -41,8 +45,13 @@ class Main extends React.Component{
                     <div style={{width:"1000px",display:"flex", flexDirection:"row", justifyContent:"center",justifyItems:"center",alignContent:"center"}}>
 
                         <div style={{width:"50%"}} className="display-small-main">
-                            <h2>We Create Unique Discounts as NFTs<br></br>Join the Ecommerce Revolution.</h2>
-                            <p className="subTitle"><AiOutlineCheck/> Stop ticket fraud<br></br><AiOutlineCheck/> Create a new source of income<br/><AiOutlineCheck/> Keep track of all your coupons<br/><AiOutlineCheck/> Step into the Metaverse</p>
+                            <h2>Increase the Return Rate on Your Discounts.<br></br>Join the Ecommerce Revolution.</h2>
+                            <p>We convert your discounts into NFTs to: </p>
+                            <p className="subTitle">
+                                <AiOutlineCheck/> Allow your discounts to be traded.<br></br>
+                                <AiOutlineCheck style={{marginLeft:"20px"}}/> Make money from each transaction.<br></br>
+                                <AiOutlineCheck/> Track all of your coupons.<br></br>
+                                <AiOutlineCheck/> Step into the Metaverse.</p>
                             <div className="normal" >
 
                                 <h4 style={{marginTop:"80px"}}>Get notified when we launch</h4>
@@ -73,17 +82,17 @@ class Main extends React.Component{
 
             {/* Hero 1 */}
             <Row style={{padding:"60px 0 60px 0"}}>
-                <Col xs={{order:1}}>
-                    <img style={{backgroundColor:"white", width:"500px", marginBottom:"50px"}} src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"></img>
+                <Col xs={{order:1}} style={{display:"flex", justifyContent:"center"}}>
+                    <img style={{ width:"300px", marginBottom:"50px"}} src={Cursor}></img>
 
                 </Col>
                 <Col xs={{order:2}}>
-                <h3>We Create Unique Discounts as NFTsJoin the Ecommerce Revolution.</h3>
-                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Stop ticket fraud<br></br><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Create a new source of income<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Keep track of all your coupons<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Step into the Metaverse</p>
+                <h3>Convert Your Discounts Into NFTs With a Single Click.</h3>
+                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}> <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> No need to modify backend code.<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> We handle all installation, in less than 15 minutes. <br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Do it once, have it forever without maintenance. <br/></p>
                     <div className="normal" >
-                        <h4 style={{marginTop:"80px"}}>Get notified when we launch</h4>
                         <div style={{display:"flex", flexDirection:"row", alignItems:"center" }}>
                         </div>
+                        <LearnMore answer="Our installation team will get in contact with you and you can either choose to install it yourself or let our team handle the process. All it is needed for our product to run flawlessly is a single line of HTML code."></LearnMore>
                     </div>
                 </Col>
             </Row>
@@ -92,16 +101,25 @@ class Main extends React.Component{
             {/*Hero 2*/}
             <Row style={{padding:"60px 0 60px 0"}}>
                 <Col xs={{order:2}} md={{order:2}}>
-                <h3>We Create Unique Discounts as NFTsJoin the Ecommerce Revolution.</h3>
-                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Stop ticket fraud<br></br><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Create a new source of income<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Keep track of all your coupons<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Step into the Metaverse</p>
+                <h3>Make Your Coupons Unique, Exchangable and Web3.0</h3>
+                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}>
+                        <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> The end of coupon fraud -> It's an NFT: Uniqueness in the web <br></br>
+                        <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Win revenue from transactions -> Users trade coupons on NFT markets<br/>
+                        <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Get more user data -> Track ownership, pricing and trade of coupons<br/>
+                        <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Custom loyalty programs for coupon holders</p>
                     <div className="normal" >
-                        <h4 style={{marginTop:"80px"}}>Get notified when we launch</h4>
+                        {/*<h4 style={{marginTop:"40px"}}>Users trade coupons:</h4>*/}
                         <div style={{display:"flex", flexDirection:"row", alignItems:"center" }}>
                         </div>
+                        <LearnMore answer={<p>The coupons themselves are <a href='https://en.wikipedia.org/wiki/Non-fungible_token'>NFTs</a>. Instead of users inputting a series of words/characters, they will instead have an NFT they can use with a single click on checkout. 
+                        Users will be able to trade it between them or on terciary NFT markets such as <a href="https://opensea.io/">OpenSea</a>. From this, we can include that you win money from every ticket exchange that occurs. They sell their coupon, you get part of the money. 
+                         On top of this, it stops ticket fraud. A user who was originally intending to pay full price for your product,
+                          can't simply search for a discount code online or use an extension to cut 30% off your revenue. Lastly, you will get detailed data of who purchases and owns the discount tickets and will be able to control the exact amount on the market.</p>}/>
+
                     </div>
                 </Col>
-                <Col xs={{order:1}} md={{order:2}}>
-                    <img style={{backgroundColor:"white", width:"500px",marginBottom:"50px"}} src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"></img>
+                <Col xs={{order:1}} md={{order:2}} style={{display:"flex", justifyContent:"center"}}> 
+                    <img style={{ width:"300px",marginBottom:"50px", maxHeight:"300px"}} src={NFT}></img>
                 </Col>
             </Row>
 
@@ -117,18 +135,22 @@ class Main extends React.Component{
             </div>
 
             {/* Hero 3 */}
-            <Row style={{padding:"60px 0 60px 0"}}>
-                <Col xs={{order:1}}>
-                    <img style={{backgroundColor:"white", width:"500px", marginBottom:"50px"}} src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640"></img>
+            <Row style={{padding:"200px 0 60px 0"}}>
+                <Col xs={{order:1}} style={{display:"flex", justifyContent:"center"}}>
+                    <img style={{ width:"300px", marginBottom:"50px"}} src={Metaverse}></img>
 
                 </Col>
                 <Col xs={{order:2}}>
-                <h3>We Create Unique Discounts as NFTsJoin the Ecommerce Revolution.</h3>
-                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Stop ticket fraud<br></br><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Create a new source of income<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Keep track of all your coupons<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Step into the Metaverse</p>
+                <h3>Stepping into the metaverse.</h3>
+                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}>
+                        <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Join the new revolution, only with the benefits.<br></br>
+                        <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Get ahead of your competition<br/>
+                        <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Forget about staying behind.<br/>
+                    </p>
                     <div className="normal" >
-                        <h4 style={{marginTop:"80px"}}>Get notified when we launch</h4>
                         <div style={{display:"flex", flexDirection:"row", alignItems:"center" }}>
                         </div>
+                        <LearnMore answer={<p>The Metaverse; the new internet. Big brands are moving into it. H&M are launching their products on their metaverse, Facebook (now Meta) has invested more than $2 billion into the concept. Get into it with our help by increasing your revenue and sacrificing nothing on the way. So, join the revolution.</p>}/>
                     </div>
                 </Col>
             </Row>
