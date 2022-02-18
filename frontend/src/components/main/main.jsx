@@ -83,24 +83,10 @@ class Main extends React.Component{
             {/* Hero 1 */}
             <Row style={{padding:"60px 0 60px 0"}}>
                 <Col xs={{order:1}} style={{display:"flex", justifyContent:"center"}}>
-                    <img style={{ width:"300px", marginBottom:"50px"}} src={Cursor}></img>
+                    <img style={{ width:"300px",marginBottom:"50px", maxHeight:"300px"}} src={NFT}></img>
 
                 </Col>
                 <Col xs={{order:2}}>
-                <h3>Convert Your Discounts Into NFTs With a Single Click.</h3>
-                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}> <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> No need to modify backend code.<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> We handle all installation, in less than 15 minutes. <br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Do it once, have it forever without maintenance. <br/></p>
-                    <div className="normal" >
-                        <div style={{display:"flex", flexDirection:"row", alignItems:"center" }}>
-                        </div>
-                        <LearnMore answer="Our installation team will get in contact with you and you can either choose to install it yourself or let our team handle the process. All it is needed for our product to run flawlessly is a single line of HTML code."></LearnMore>
-                    </div>
-                </Col>
-            </Row>
-
-
-            {/*Hero 2*/}
-            <Row style={{padding:"60px 0 60px 0"}}>
-                <Col xs={{order:2}} md={{order:2}}>
                 <h3>Make Your Coupons Unique, Exchangable and Web3.0</h3>
                     <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}>
                         <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> The end of coupon fraud -> It's an NFT: Uniqueness in the web <br></br>
@@ -118,8 +104,22 @@ class Main extends React.Component{
 
                     </div>
                 </Col>
+            </Row>
+
+
+            {/*Hero 2*/}
+            <Row style={{padding:"60px 0 60px 0"}}>
+                <Col xs={{order:2}} md={{order:2}}>
+                <h3>Convert Your Discounts Into NFTs With a Single Click.</h3>
+                    <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}> <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> No need to modify backend code.<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> We handle all installation, in less than 15 minutes. <br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Do it once, have it forever without maintenance. <br/></p>
+                    <div className="normal" >
+                        <div style={{display:"flex", flexDirection:"row", alignItems:"center" }}>
+                        </div>
+                        <LearnMore answer="Our installation team will get in contact with you and you can either choose to install it yourself or let our team handle the process. All it is needed for our product to run flawlessly is a single line of HTML code."></LearnMore>
+                    </div>
+                </Col>
                 <Col xs={{order:1}} md={{order:2}} style={{display:"flex", justifyContent:"center"}}> 
-                    <img style={{ width:"300px",marginBottom:"50px", maxHeight:"300px"}} src={NFT}></img>
+                    <img style={{ width:"300px", marginBottom:"50px"}} src={Cursor}></img>
                 </Col>
             </Row>
 
