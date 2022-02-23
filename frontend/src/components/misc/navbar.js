@@ -5,7 +5,7 @@ function Header(){
         <div>
            <Navbar bg="dark" expand="lg" className="dzNavbar" >
             <Container>
-                <Navbar.Brand className="mainLogo" href="/">LERYK</Navbar.Brand>
+                <Navbar.Brand className="mainLogo" href="/">ZEENO</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav style={{marginLeft:"auto",marginRight:"0px !important"}}>

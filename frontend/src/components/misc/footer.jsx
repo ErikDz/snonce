@@ -6,7 +6,7 @@ function Footer(){
             <Container>
                 <Row>
                     <Col>
-                    © 2022 LERYK. All Rights Reserved.
+                    © 2022 ZEENO. All Rights Reserved.
                     </Col>
                     <Col>
                     <div style={{display:"flex", justifyContent:"space-around"}}>

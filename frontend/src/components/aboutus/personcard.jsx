@@ -8,6 +8,7 @@ function PersonCard(props){
                 <p>{props.name}</p>
                 <p><i>{props.title}</i></p>
                 <p style={{fontSize:"14px"}}>{props.description}</p>
+                <a href={"https://" + props.personalsite} style={{fontSize:"15px", color:"white"}}><i>{props.personalsite}</i></a>
             </div>
         </div>
     )
