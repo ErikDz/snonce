@@ -11,12 +11,20 @@ import NFT from "../../Images/nft.png"
 import Metaverse from "../../Images/vr-glasses.png"
 
 import Particles from "react-tsparticles"
+import axios from "axios"
 import Particulas from "./particulas"
 class Main extends React.Component{
 
     constructor(props) {
     super(props);
-    this.state = { windowWidth: window.innerWidth };
+    this.state = { 
+        windowWidth: window.innerWidth,
+        email:"",
+        message:""
+     };
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.eraseMessage = this.eraseMessage.bind(this)
     }
 
     handleResize = (e) => {
@@ -30,6 +38,33 @@ class Main extends React.Component{
     componentWillUnmount() {
     window.addEventListener("resize", this.handleResize);
     } 
+
+    eraseMessage(){
+        this.setState({message:""})
+    }
+
+    handleSubmit(event) {
+    if (this.state.email.length > 0){
+        const payload = {"email":this.state.email}
+        axios.post("http://127.0.0.1:5000/", payload)
+        .then(response => {
+            console.log("success")
+        this.setState({email:"",message:"Succesfully submitted."})
+        setTimeout(this.eraseMessage, 4000)
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        });
+        event.preventDefault();
+    }
+  }
+
+
+
+    handleChange(event){
+        const {name,value,type,checked} = event.target
+        type === "checkbox" ? this.setState({[name]:checked}) : this.setState({[name]: value})
+    }
 
 
     render(){
@@ -56,9 +91,10 @@ class Main extends React.Component{
 
                                 <h4 style={{marginTop:"80px"}}>Get notified when we launch</h4>
                                 <div style={{display:"flex", flexDirection:"row", alignItems:"center" }}>
-                                    <input  placeholder="Your email address"/>
-                                    <span className="email-button" style={{marginLeft:"10px"}}>Get notified <AiOutlineArrowRight/> </span>
+                                    <input onChange={this.handleChange} value={this.state.email} name="email" placeholder="Your email address"/>
+                                    <span onClick={this.handleSubmit} className="email-button" style={{marginLeft:"10px"}}>Get notified <AiOutlineArrowRight/> </span>
                                 </div>
+                                <p style={{color:"#018a38"}}> {this.state.message}</p>
                                 { (windowWidth < 821) ?  <Particulas style={{top:"-100px"}} className="disappear2"/> : null}
 
                             </div>
@@ -82,11 +118,11 @@ class Main extends React.Component{
 
             {/* Hero 1 */}
             <Row style={{padding:"60px 0 60px 0"}}>
-                <Col xs={{order:1}} style={{display:"flex", justifyContent:"center"}}>
+                <Col md={6} xs={{order:1}} style={{display:"flex", justifyContent:"center"}}>
                     <img style={{ width:"300px",marginBottom:"50px", maxHeight:"300px"}} src={NFT}></img>
 
                 </Col>
-                <Col xs={{order:2}}>
+                <Col md={6} xs={{order:2}}>
                 <h3>Make Your Coupons Unique, Exchangable and Web3.0</h3>
                     <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}>
                         <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> The end of coupon fraud -> It's an NFT: Uniqueness in the web <br></br>
@@ -109,7 +145,7 @@ class Main extends React.Component{
 
             {/*Hero 2*/}
             <Row style={{padding:"60px 0 60px 0"}}>
-                <Col xs={{order:2}} md={{order:2}}>
+                <Col  xs={{order:2}} md={{span:6,order:2}}>
                 <h3>Convert Your Discounts Into NFTs With a Single Click.</h3>
                     <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}> <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> No need to modify backend code.<br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> We handle all installation, in less than 15 minutes. <br/><AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Do it once, have it forever without maintenance. <br/></p>
                     <div className="normal" >
@@ -118,7 +154,7 @@ class Main extends React.Component{
                         <LearnMore answer="Our installation team will get in contact with you and you can either choose to install it yourself or let our team handle the process. All it is needed for our product to run flawlessly is a single line of HTML code."></LearnMore>
                     </div>
                 </Col>
-                <Col xs={{order:1}} md={{order:2}} style={{display:"flex", justifyContent:"center"}}> 
+                <Col xs={{order:1}} md={{span:6,order:2}} style={{display:"flex", justifyContent:"center"}}> 
                     <img style={{ width:"300px", marginBottom:"50px"}} src={Cursor}></img>
                 </Col>
             </Row>
@@ -127,20 +163,19 @@ class Main extends React.Component{
             <div className="align-and-center" className="caja-email">
                 <h3 style={{textAlign:"center"}}>Get notified when we launch!</h3>
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
-                    <input placeholder="Your email"></input>
-                    <span className="button2">Remember me <AiOutlineArrowRight/> </span>
+                    <input onChange={this.handleChange} value={this.state.email} name="email" placeholder="Your email"></input>
+                    <span onClick={this.handleSubmit} className="button2">Remember me <AiOutlineArrowRight/> </span>
                 </div>
-
-
+                <p style={{textAlign:"center",margin:"10px 0 0 0 ",color:"#018a38"}}> {this.state.message}</p>
             </div>
 
             {/* Hero 3 */}
             <Row style={{padding:"200px 0 60px 0"}}>
-                <Col xs={{order:1}} style={{display:"flex", justifyContent:"center"}}>
+                <Col md={6} xs={{order:1}} style={{display:"flex", justifyContent:"center"}}>
                     <img style={{ width:"300px", marginBottom:"50px"}} src={Metaverse}></img>
 
                 </Col>
-                <Col xs={{order:2}}>
+                <Col md={6} xs={{order:2}}>
                 <h3>Stepping into the metaverse.</h3>
                     <p className="subTitle" style={{color:"#aba499", fontWeight:"400"}}>
                         <AiOutlineCheck style={{color:"rgb(0, 14, 160)"}}/> Join the new revolution, only with the benefits.<br></br>

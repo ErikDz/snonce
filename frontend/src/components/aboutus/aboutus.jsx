@@ -19,7 +19,7 @@ function AboutUs(){
                     name={"Levente Ludányi"}
                     title={"Co-Founder - CTO"}
                     description={"Student of Mathematics and Computer Science at École Polytechnique de Paris. Silver medalist at the International Physics Olympiad, Head of Finance at Future: Hungary and President of the Algorithmic Trading Society at École Polytechnique "}
-                    personalsite={""}
+                    personalsite={"ludanyilevente.com"}
                      />
                     <PersonCard image={ErikDz}
                     name={"Erik Dziekonski Bautista"}

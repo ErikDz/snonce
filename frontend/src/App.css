@@ -103,6 +103,7 @@ input::content{
 }
 
 .email-button{
+  cursor: pointer;
       color-scheme: dark !important;
     -webkit-text-size-adjust: 100%;
     --darkreader-neutral-background: #131516;
@@ -177,6 +178,7 @@ input::content{
   background-color: rgb(0, 14, 160);
   padding: 10px 20px 10px 20px;
   margin-left: 15px;
+  cursor: pointer;
 
 }
 
