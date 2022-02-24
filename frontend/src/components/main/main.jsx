@@ -44,9 +44,11 @@ class Main extends React.Component{
     }
 
     handleSubmit(event) {
-    if (this.state.email.length > 0){
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (re.test(this.state.email)){
         const payload = {"email":this.state.email}
-        axios.post("http://127.0.0.1:5000/", payload)
+        axios.post("https://api.zeeno.app", payload)
         .then(response => {
             console.log("success")
         this.setState({email:"",message:"Succesfully submitted."})
@@ -75,7 +77,7 @@ class Main extends React.Component{
             <Header></Header>
 
             <section style={{paddingTop:"100px", backgroundColor:"#283032", paddingBottom:"100px"}}>
-            <Container>
+            <Container style={{padding:"0 10px 0 10px"}}>
                 <div style={{display:"flex", justifyContent:"center"}}>
                     <div style={{width:"1000px",display:"flex", flexDirection:"row", justifyContent:"center",justifyItems:"center",alignContent:"center"}}>
 

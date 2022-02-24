@@ -30,7 +30,7 @@ function AboutUs(){
                     <PersonCard image={Fryderyk}
                     name={"Fryderyk Sitnik"}
                     title={"Co-Founder - CMO"}
-                    description={"Student of Mathematics and Computer Science at École Polytechnique de Paris. "}
+                    description={"Student of Mathematics and Computer Science at École Polytechnique de Paris. Founder and President of the Board of Directors of the TeenCrunch Foundation, a non-profit startup accelerator for youth in Poland. Organized two batches of his accelerator with 9 startups in total."}
                     personalsite={""}
                      />
                 </Container>
